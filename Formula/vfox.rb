@@ -11,7 +11,7 @@ class Vfox < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/version-fox_Darwin_x86_64.tar.gz"
-      sha256 "7bc9fb95a1dc358e8a0d6f64b4f64a40ab11536a46befe5d53b07b16126a4e4b"
+      sha256 "40e37ed21cfdaf89882a30944c7b386e35dc9b0d54e0c1b47d72207b10995b58"
 
       def install
         bin.install "vfox"
@@ -19,7 +19,7 @@ class Vfox < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/version-fox_Darwin_arm64.tar.gz"
-      sha256 "9c5510144149eb0fefc5a1bf4dd0a70f57996240a3635c517a53933d1ae611cd"
+      sha256 "3079c3b361b43885aa720ef96b04d5f3bee73ddc22e8c8d2e3bb9daad6b2b056"
 
       def install
         bin.install "vfox"
@@ -28,9 +28,17 @@ class Vfox < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/version-fox_Linux_arm64.tar.gz"
+      sha256 "391f88c90b38a85856aec3d655f04d7cb9156c55504420db11374d0da63a7ac9"
+
+      def install
+        bin.install "vfox"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/version-fox_Linux_armv7.tar.gz"
-      sha256 "c894d842256fc8eb7e74b183016d1565c34984f1fea9f876e998701e34f8996c"
+      sha256 "dc36f457c1b645367d88c61f067a9eb0a6e50801bc63d8e07766e979df2463da"
 
       def install
         bin.install "vfox"
@@ -38,15 +46,7 @@ class Vfox < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/version-fox_Linux_x86_64.tar.gz"
-      sha256 "7376613ca191a6a383f9df6c700de315baf902bbb6c3d8b0972848a680496d1d"
-
-      def install
-        bin.install "vfox"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/version-fox_Linux_arm64.tar.gz"
-      sha256 "6124786396627997e8854bea71083d8ead1c64283e4d333442c6606c4e290848"
+      sha256 "da9710fa31a08dd93c0ec81c2bb47442e4ed84b0fb51824d406e663c6d12fe19"
 
       def install
         bin.install "vfox"
