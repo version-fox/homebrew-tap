@@ -11,7 +11,7 @@ class Vfox < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/vfox_0.0.1_macos_x86_64.tar.gz"
-      sha256 "715a848a13f6d8006d81b6318579832be8f888231dbae0deeb472f54ca83e9b3"
+      sha256 "8fcf5d0ee0ee74f4b2ed8a62ac5373d64db2d2d334f78c3d281c566a9978a525"
 
       def install
         bin.install "vfox"
@@ -19,7 +19,7 @@ class Vfox < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/vfox_0.0.1_macos_aarch64.tar.gz"
-      sha256 "7ceda83b98a4dc1268899cbef79fb2315c409590bfffedaf0341c055b6756424"
+      sha256 "47784ac6b64c47ef161eddfa628e588c737a5d5b454d06fe4ded482cbbc7299f"
 
       def install
         bin.install "vfox"
@@ -28,17 +28,17 @@ class Vfox < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/vfox_0.0.1_linux_x86_64.tar.gz"
-      sha256 "de69e809b3e6032397529ce1f124e86074e14b17ccca13c2860121dca2311cfd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/vfox_0.0.1_linux_aarch64.tar.gz"
+      sha256 "e61485a3efcbdb267aa27d6e9c21751e2184bba4bd2da59df228bf12e7ca4204"
 
       def install
         bin.install "vfox"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/vfox_0.0.1_linux_aarch64.tar.gz"
-      sha256 "36ff74a4ea1f550d15d5345b88a04e0d2403efaa5333d6de3bd09b9f18796d16"
+    if Hardware::CPU.intel?
+      url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/vfox_0.0.1_linux_x86_64.tar.gz"
+      sha256 "d6432f19f7a5adfb51320232720ac853de5c3da92b0b5289a7e554b732f8ca3a"
 
       def install
         bin.install "vfox"
@@ -46,7 +46,7 @@ class Vfox < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/aooohan/version-fox/releases/download/v0.0.1/vfox_0.0.1_linux_armv7.tar.gz"
-      sha256 "5bb9f116438433227e41de47e45e2559a921f4b43bca8f7889edce84cc79d6f6"
+      sha256 "269cf7e49fbff6ec639794abcf2589398bba78488dcd97a5f251074dc6195e29"
 
       def install
         bin.install "vfox"
