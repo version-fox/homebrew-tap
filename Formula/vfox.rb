@@ -9,9 +9,9 @@ class Vfox < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_macos_aarch64.tar.gz"
-      sha256 "056b5a4a21a604c01cefc9c7a28aec282e731a0d766c7e32b4c6cb93a489fb21"
+    if Hardware::CPU.intel?
+      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_macos_x86_64.tar.gz"
+      sha256 "35a38eef21025ce52f5fc92460f2ebadac37590582c82c89c287795bf638d942"
 
       def install
         bin.install "vfox"
@@ -19,9 +19,9 @@ class Vfox < Formula
         zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_macos_x86_64.tar.gz"
-      sha256 "bc0317cef42d4bf3420ac9790f4ab00b6f8d828fd075340405c7664ad86130d2"
+    if Hardware::CPU.arm?
+      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_macos_aarch64.tar.gz"
+      sha256 "25490d61e436839ef2ac4c54ac43ad1009fbc264ebcb2bc58049ba093c2cbed5"
 
       def install
         bin.install "vfox"
@@ -32,9 +32,9 @@ class Vfox < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_linux_x86_64.tar.gz"
-      sha256 "f86246e7536f2f5400adfbd16ca6ce1635d80b13bfe1df73693ed36c0cd44d94"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_linux_armv7.tar.gz"
+      sha256 "46efeb63b3c1630a6f2bb0a2008ab2a0e85b02d8ba52857398050058f73b6f99"
 
       def install
         bin.install "vfox"
@@ -44,7 +44,7 @@ class Vfox < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_linux_aarch64.tar.gz"
-      sha256 "0071d5c53ca8bef43491705d1cbe3f9439797545ca497a7cd2378e54a2acf503"
+      sha256 "0a549672758be6177b9919d6bb50a4ab19f64bdfab0a5137f45a9681956c497d"
 
       def install
         bin.install "vfox"
@@ -52,9 +52,9 @@ class Vfox < Formula
         zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_linux_armv7.tar.gz"
-      sha256 "5a97e0f1f0fc951cfa0201332b3c43258c72328d52562c45414c8b58b9017e19"
+    if Hardware::CPU.intel?
+      url "https://github.com/version-fox/vfox/releases/download/v0.2.0/vfox_0.2.0_linux_x86_64.tar.gz"
+      sha256 "255454734214ae1f070eac2689379d91fff216b10670de15c7e0c61da7f29f46"
 
       def install
         bin.install "vfox"
