@@ -5,13 +5,13 @@
 class Vfox < Formula
   desc "A cross-platform SDK version manager with a simple cli."
   homepage "https://github.com/version-fox/vfox"
-  version "0.5.3"
+  version "0.5.4"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/version-fox/vfox/releases/download/v0.5.3/vfox_0.5.3_macos_x86_64.tar.gz"
-      sha256 "aab755c2b1862b54a78061e7f211fec5c914aa0f661dcd9b3ada5cbd760fa700"
+      url "https://github.com/version-fox/vfox/releases/download/v0.5.4/vfox_0.5.4_macos_x86_64.tar.gz"
+      sha256 "9c57d3122f5a3acfde3f89c3dbad4662af3e9dd6347edd1ed2e761091dcee172"
 
       def install
         bin.install "vfox"
@@ -20,8 +20,8 @@ class Vfox < Formula
       end
     end
     on_arm do
-      url "https://github.com/version-fox/vfox/releases/download/v0.5.3/vfox_0.5.3_macos_aarch64.tar.gz"
-      sha256 "7e455017acd1e40550a7d11cf391e93acbc5a0154be20410fcad0301a0eed647"
+      url "https://github.com/version-fox/vfox/releases/download/v0.5.4/vfox_0.5.4_macos_aarch64.tar.gz"
+      sha256 "f3942b45f828c5e9a5f0485d21c6f6a0f23b495e88707377df14019962e95368"
 
       def install
         bin.install "vfox"
@@ -34,8 +34,8 @@ class Vfox < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/version-fox/vfox/releases/download/v0.5.3/vfox_0.5.3_linux_x86_64.tar.gz"
-        sha256 "8e69a0f21c9641edb6bc9e6c1d8dc0cce1777ba2b74d1d68b89ee72a89b5cf20"
+        url "https://github.com/version-fox/vfox/releases/download/v0.5.4/vfox_0.5.4_linux_x86_64.tar.gz"
+        sha256 "ed21dc28cc75aff7999e2b1ba5095747cd8e67855c93a739768bcc0c65331d09"
 
         def install
           bin.install "vfox"
@@ -46,8 +46,8 @@ class Vfox < Formula
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/version-fox/vfox/releases/download/v0.5.3/vfox_0.5.3_linux_armv7.tar.gz"
-        sha256 "67efeffd808805a733a90ed8f95b230b9d91cd8dd058851e7bd3363fbdac48ba"
+        url "https://github.com/version-fox/vfox/releases/download/v0.5.4/vfox_0.5.4_linux_armv7.tar.gz"
+        sha256 "6be5a0cc7c2e0a980a733f083f02f256a65ce1031e9de5a702b4d69bc0f2e1e5"
 
         def install
           bin.install "vfox"
@@ -58,8 +58,8 @@ class Vfox < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/version-fox/vfox/releases/download/v0.5.3/vfox_0.5.3_linux_aarch64.tar.gz"
-        sha256 "67c85bbb63c1c0de05e69dad993358b747416477ec20c31f8cbf9c5d4b20c042"
+        url "https://github.com/version-fox/vfox/releases/download/v0.5.4/vfox_0.5.4_linux_aarch64.tar.gz"
+        sha256 "ef77bbbb4e97562abe394b2d4c07309087e94ac5c6ebb3263b91214f05216b41"
 
         def install
           bin.install "vfox"
