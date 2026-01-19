@@ -5,13 +5,13 @@
 class Vfox < Formula
   desc "A cross-platform SDK version manager with a simple cli."
   homepage "https://github.com/version-fox/vfox"
-  version "1.0.3"
+  version "1.0.4"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.3/vfox_1.0.3_macos_x86_64.tar.gz"
-      sha256 "0490c99d695bb07e36a6060e32bebcd9bfabcdf9cdb0a887f76a7f75104e1863"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.4/vfox_1.0.4_macos_x86_64.tar.gz"
+      sha256 "e1aa3c34c5f6f87e13d7a3326e96dae8f1e161f8017ddc2ec7e700c80d1c9fe6"
 
       def install
         bin.install "vfox"
@@ -20,8 +20,8 @@ class Vfox < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.3/vfox_1.0.3_macos_aarch64.tar.gz"
-      sha256 "b607bb32098bdc20faa30dc644e68e294ccf56df559cffe7dedff19e7a784da3"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.4/vfox_1.0.4_macos_aarch64.tar.gz"
+      sha256 "554c77c772f54243f7377167a23e77ffafaadb982d9b36d24c5ba870e45963f5"
 
       def install
         bin.install "vfox"
@@ -33,8 +33,8 @@ class Vfox < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.3/vfox_1.0.3_linux_x86_64.tar.gz"
-      sha256 "a5f3eac1e0fe39403ac140b304b42eb2724513473d1ac783cc71d51619191fc1"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.4/vfox_1.0.4_linux_x86_64.tar.gz"
+      sha256 "221780443f135f034769a998c7c26c6453c65e686393c2f19031729b5978a44c"
       def install
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
@@ -42,8 +42,8 @@ class Vfox < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.3/vfox_1.0.3_linux_armv7.tar.gz"
-      sha256 "2aeaf5c8b382d0b5895f797d41273f662c006fac35acfdb721e0141bb983b8ed"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.4/vfox_1.0.4_linux_armv7.tar.gz"
+      sha256 "5498309792eb724d408ae1f35158b0a92979d4ac788e639da2e3b31ba23093e0"
       def install
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
@@ -51,8 +51,8 @@ class Vfox < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.3/vfox_1.0.3_linux_aarch64.tar.gz"
-      sha256 "53bb567454cd2166b9985582b9f543efb9ec0d8010e7bb5bd94f7fd90a63d28b"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.4/vfox_1.0.4_linux_aarch64.tar.gz"
+      sha256 "bc943d85f0ba4d36d22f6c5279c8f11f9f1bf1b242c3c01838cbcdf3a514bb42"
       def install
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
