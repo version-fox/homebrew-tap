@@ -5,58 +5,63 @@
 class Vfox < Formula
   desc "A cross-platform SDK version manager with a simple cli."
   homepage "https://github.com/version-fox/vfox"
-  version "1.0.12"
+  version "1.0.13"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.12/vfox_1.0.12_macos_x86_64.tar.gz"
-      sha256 "3577c62c2f681089092d715f4e5021680de32452ca2540078803545f661b9550"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.13/vfox_1.0.13_macos_x86_64.tar.gz"
+      sha256 "5327b4ebbca9d9be49454251d5dd44842b8657e218864bf83421cb65b9bf6b18"
 
       define_method(:install) do
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
         zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
+        fish_completion.install "completions/vfox.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.12/vfox_1.0.12_macos_aarch64.tar.gz"
-      sha256 "aab23403d465806ba532d3b7b882cba3b3685a8d995e6ec888518515ee623f7f"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.13/vfox_1.0.13_macos_aarch64.tar.gz"
+      sha256 "9f040c5b2cef37c0ce4fb772e552b52be0ed1bcd9b63d2c6aaf4d59f5cc99a05"
 
       define_method(:install) do
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
         zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
+        fish_completion.install "completions/vfox.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.12/vfox_1.0.12_linux_x86_64.tar.gz"
-      sha256 "7d4a504bbec0cec1072eabd8c5ab680852ea70e971280eba006066bde378a9bd"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.13/vfox_1.0.13_linux_x86_64.tar.gz"
+      sha256 "7ad0a4c82c8173f09393e09abecc3e27468253bab5fe53ffbf58f2b12b3fc768"
       define_method(:install) do
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
         zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
+        fish_completion.install "completions/vfox.fish"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.12/vfox_1.0.12_linux_armv7.tar.gz"
-      sha256 "8bedfed7f40cde3a70f265f94db73880203faf5cd7539d3b75e7e931df1660b0"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.13/vfox_1.0.13_linux_armv7.tar.gz"
+      sha256 "ea3006ebe00e7d0228b337f358515862cde24dfca5f67d0220232f0eb7d50449"
       define_method(:install) do
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
         zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
+        fish_completion.install "completions/vfox.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/version-fox/vfox/releases/download/v1.0.12/vfox_1.0.12_linux_aarch64.tar.gz"
-      sha256 "85186780b260d124aa53cebc5808ed29e15ed0572886f229de4a8d0899645cfe"
+      url "https://github.com/version-fox/vfox/releases/download/v1.0.13/vfox_1.0.13_linux_aarch64.tar.gz"
+      sha256 "7cec88e6e9be551cb138e061d37521286d34096fdc0c4fdb65d89cef30c58583"
       define_method(:install) do
         bin.install "vfox"
         bash_completion.install "completions/bash_autocomplete" => "vfox"
         zsh_completion.install "completions/zsh_autocomplete" => "_vfox"
+        fish_completion.install "completions/vfox.fish"
       end
     end
   end
